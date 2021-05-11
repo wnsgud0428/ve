@@ -1,5 +1,5 @@
 
-# ve local에서 리드미 수정2 (local 것으로 통합)
+# ve local에서 리드미 수정3(이제 local에서 수정해서 계속 push 할거임)
 
 ## Project setup
 ```
