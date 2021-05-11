@@ -1,4 +1,5 @@
-# ve local에서 리드미 수정2
+
+# ve local에서 리드미 수정2 (local 것으로 통합)
 
 ## Project setup
 ```
