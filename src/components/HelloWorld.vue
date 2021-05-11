@@ -22,6 +22,7 @@
 
 <script>
 const { dialog } = require('electron').remote
+const fs = require('fs')
 export default {
   data () {
     return {
@@ -30,11 +31,31 @@ export default {
   },
   methods: {
     read () {
-      const r = dialog.showOpenDialogSync()
-      console.log(r)
+      const options = {
+        filters: [
+          {
+            name: 'text and markdown',
+            extensions: ['txt', 'md']
+          }
+        ]
+      }
+      const r = dialog.showOpenDialogSync(options)
+      if (!r) return
+      this.text = fs.readFileSync(r[0])
     },
     write () {
-
+      const options = {
+        filters: [
+          {
+            name: 'text and markdown',
+            extensions: ['txt', 'md']
+          }
+        ]
+      }
+      const r = dialog.showSaveDialogSync(options)
+      // console.log(r)
+      if (!r) return
+      fs.writeFileSync(r, this.text)
     }
   }
 }
